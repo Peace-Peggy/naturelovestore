@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hair_product.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @hair_product.type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hair_product.description %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @hair_product.size %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @hair_product.price %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @hair_product.ingredients %>
+</p>
+
+<%= link_to 'Edit', edit_hair_product_path(@hair_product) %> |
+<%= link_to 'Back', hair_products_path %>
