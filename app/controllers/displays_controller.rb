@@ -1,6 +1,6 @@
 class DisplaysController < ApplicationController
   before_action :set_display, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:show, :index]
   # GET /displays
   # GET /displays.json
   def index
@@ -25,7 +25,7 @@ class DisplaysController < ApplicationController
   # POST /displays.json
   def create
     @display = Display.new(display_params)
-
+    @display.user = current_user
     respond_to do |format|
       if @display.save
         format.html { redirect_to @display, notice: 'Display was successfully created.' }
@@ -69,6 +69,6 @@ class DisplaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def display_params
-      params.require(:display).permit(:title, :body, :user_id)
+      params.require(:display).permit(:title, :body)
     end
 end
