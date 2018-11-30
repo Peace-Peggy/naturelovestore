@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cart_items
   resources :hair_products
 
   root 'hair_products#index'
